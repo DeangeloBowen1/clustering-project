@@ -146,7 +146,7 @@ def omit_outliers(df, stdev, columns):
 def import_observed_columns(df):
     df = df[['parcelid','logerror', 'bathroomcnt',
                      'bedroomcnt', 'calculatedfinishedsquarefeet',
-                     'fips', 'yearbuilt', 'propertylandusedesc']]
+                     'fips', 'yearbuilt', 'propertylandusedesc', 'taxvaluedollarcnt']]
     return df
 
 
@@ -158,7 +158,7 @@ def scale_data(train, validate, test, return_scaler=False):
     """
     
     # scale the data
-    scaled_cols = ['bedrooms', 'bathrooms', 'square_feet', 'property_age', 'year_built']
+    scaled_cols = ['bedrooms', 'bathrooms', 'square_feet', 'property_age', 'year_built', 'home_value']
 
     train_scaled = train.copy()
     validate_scaled = validate.copy()
